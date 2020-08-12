@@ -1,0 +1,20 @@
+@media screen and (min-width:800px){
+    .brand-logo{margin-left: 20px;}
+}
+
+/* POSICIONANDO O RODAPÉ NO FINAL DA PÁGINA */
+.page-footer{position: absolute; bottom:0; width:100%}
+
+/*  CRIANDO CARROSSEL COM O NOME*/
+.carrossel{width:100%; display:flex; justify-content: flex-end;}
+.carrossel > span{position: relative; animation: movimento 10s infinite;}
+
+@keyframes movimento{
+    0%{right:0%; opacity:0;}
+    20%{opacity:5;}
+    30%{opacity:1;}
+
+    60%{opacity:5;}    
+    80%{opacity:0;}    
+    100%{right:100%;}
+}
