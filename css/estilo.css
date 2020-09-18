@@ -1,9 +1,11 @@
+/*body{overflow: hidden;}/*Com o animate.css, pode aparecer rapidamente uma barra de rolagem e isso dá um efeito estranho na página, para evitar ocuiltamos tudo que excede na página*/
+
 @media screen and (min-width:800px){
     .brand-logo{margin-left: 20px;}
 }
 
 /* POSICIONANDO O RODAPÉ NO FINAL DA PÁGINA */
-.page-footer{position: absolute; bottom:0; width:100%}
+.page-footer{position: fixed; bottom:0; width:100%}
 
 /*  CRIANDO CARROSSEL COM O NOME*/
 .carrossel{width:100%; display:flex; justify-content: flex-end;}

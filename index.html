@@ -14,13 +14,13 @@
         <!-- Menu -->    
         <nav>
             <div class="nav-wrapper blue darken-3">
-            <a href="#!" class="brand-logo">SA2</a>
+            <a href="#!" class="brand-logo" onclick="displayStuff('home')">SA2</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Calcular idade</a></li>
-                <li><a href="#">Calcular câmbio</a></li>
-                <li><a href="#">Verificar dia da semana</a></li>
-                <li><a href="#">Calcular Desconto</a></li>
+                <li><a href="#" onclick="displayStuff('idade')">Calcular idade</a></li>
+                <li><a href="#" onclick="displayStuff('cambio')">Calcular câmbio</a></li>
+                <li><a href="#" onclick="displayStuff('dia')">Verificar dia da semana</a></li>
+                <li><a href="#" onclick="displayStuff('desconto')">Calcular Desconto</a></li>
                 <li><a href="#modalDev" class="modal-trigger">Desenvolvedores</a></li>
             </ul>
             </div>
@@ -29,10 +29,10 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a class="sidenav-close" href="#!"><i class="right blue-text text-darken-4 material-icons">close</i></a></li>
 
-            <li><a href="#" class="sidenav-close">Calcular idade</a></li>
-            <li><a href="#" class="sidenav-close">Calcular câmbio</a></li>
-            <li><a href="#" class="sidenav-close">Verificar dia da semana</a></li>
-            <li><a href="#" class="sidenav-close">Calcular Desconto</a></li>
+            <li><a href="#" onclick="displayStuff('idade')" class="sidenav-close">Calcular idade</a></li>
+            <li><a href="#" onclick="displayStuff('cambio')" class="sidenav-close">Calcular câmbio</a></li>
+            <li><a href="#" onclick="displayStuff('dia')" class="sidenav-close">Verificar dia da semana</a></li>
+            <li><a href="#" onclick="displayStuff('desconto')" class="sidenav-close">Calcular Desconto</a></li>
             <li><a href="#modalDev" class="modal-trigger sidenav-close">Desenvolvedores</a></li>
         </ul>
 
@@ -41,13 +41,79 @@
             <section class="col l2"></section>
             <section class="col l8 s12"> 
                 <div class="card-panel teal center-align">
-                    <h5 class="white-text">
+                    <h5 class="white-text" id="msgInicial">
                         Olá, seja bem vindo à Situação de Aprendizagem 2
                     </h5>
                 </div>
             </section>
             <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
         </section>
+
+
+        <!-- 2ª funcionalidade: Câmbio -->
+        <section class="row" id="cambio" style="display:none">
+            <section class="col l2"></section> <!-- pegando 2 colunas do lado esquerdo -->
+            <section class="col l8 s12"> <!-- pegando 8 colunas dando a impresseão de centralização -->
+                <div class="card-panel">
+
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12 m6 ">
+                                    <i class="material-icons prefix">attach_money</i>
+                                    <input id="dolares" type="text" class="validate">
+                                    <label for="dolares">Valor em Dolar:</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <i class="material-icons prefix">attach_money</i>
+                                    <input id="cot" type="text" class="validate">
+                                    <label for="cot">Valor cotação do dia:</label>
+                                </div>
+                            </div>
+
+                            <p id='result'></p>
+
+                            <div class="row">
+                                <button type="submit" name="converter" id="cambio" class="waves-effect waves-light btn right" onclick="conversor()">Converter</button>
+                            </div> 
+                        </form>
+                    </div>                         
+
+                </div>
+            </section>
+            <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
+        </section>
+
+
+        <section class="row">
+            <section class="col l2"></section>
+                    <section class="col l8 s12">
+                            <div class="card-panel light-blue lighten-5 center-align">
+                                <div class="container" id="home" style="display:block">
+                                        Home
+                                        <!-- Page Content goes here -->
+                                </div>
+                                <div class="container" id="idade" style="display:none">
+                                        Calcular Idade
+                                        <!-- Page Content goes here -->
+                                </div>
+
+                                <div class="container" id="dia" style="display:none">
+                                    Verificar Dia da Semana
+                                    <!-- Page Content goes here -->
+                                </div>
+                                <div class="container" id="desconto" style="display:none">
+                                    Calcular Desconto
+                                    <!-- Page Content goes here -->
+                                </div>
+
+                            </div>
+                            
+                    </section>                
+            
+        </section>
+
+
 
         <!-- Modal Desenvolvedores -->
         <section id="modalDev" class="modal modal-fixed-footer">
@@ -57,28 +123,28 @@
                 <ul class="collection">
                     <li class="collection-item avatar">
                         <i class="material-icons circle">person</i>
-                        <span class="title">Nome_Integrante</span>
-                        <p>E-mail</p>
+                        <span class="title">Bruno Costa</span>
+                        <p>andersonbruno@fiema.org.br</p>
                     </li>
                     <li class="collection-item avatar">
                         <i class="material-icons circle">person</i>
-                        <span class="title">Nome_Integrante</span>
-                        <p>E-mail</p>
+                        <span class="title">Clayton Moura</span>
+                        <p>crmoura@educar.sfiec.org.br</p>
                     </li>
                     <li class="collection-item avatar">
                         <i class="material-icons circle">person</i>
-                        <span class="title">Nome_Integrante</span>
-                        <p>E-mail</p>
+                        <span class="title">Denis Brito</span>
+                        <p>franciscodenis@senai-pi.com.br</p>
                     </li>
                     <li class="collection-item avatar">
                         <i class="material-icons circle">person</i>
-                        <span class="title">Nome_Integrante</span>
-                        <p>E-mail</p>
+                        <span class="title">Marcelo Martins</span>
+                        <p>marcelo.martins@ms.senai.br</p>
                     </li>
                     <li class="collection-item avatar">
                         <i class="material-icons circle">person</i>
-                        <span class="title">Nome_Integrante</span>
-                        <p>E-mail</p>
+                        <span class="title">Thiago Alencar</span>
+                        <p>tbalencar@educar.sfiec.org.br</p>
                     </li>
                 </ul>
             
