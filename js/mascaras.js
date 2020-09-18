@@ -1,13 +1,13 @@
 $(document).ready(function(){
 	$("#dolares").maskMoney({
-      	allowNegative: true, 
+      	allowNegative: false, 
     	thousands:'.', 
     	decimal:',', 
     	affixesStay: false
     });
 
     $("#cot").maskMoney({
-    	allowNegative: true, 
+    	allowNegative: false, 
     	thousands:'.', 
     	decimal:',', 
     	affixesStay: false
