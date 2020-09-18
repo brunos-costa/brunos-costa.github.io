@@ -3,17 +3,23 @@
 
 	var Vdolar = 0;     
 	var Vcot = 0; 
+
 	//acessar o que foi digitado
 	var Vdolar = document.getElementById('dolares').value;
-	var Vcot = document.getElementById('cot').value;
+	var Vcot = document.getElementById('cot').value;	
+
+    Vdolar = removePontoVirgula(Vdolar)
+    Vcot = removePontoVirgula(Vcot)
 
 	//converter de string para float
 	Vdolar = parseFloat(Vdolar);
 	Vcot = parseFloat(Vcot);
 	var Vfinal
 	Vfinal = Vdolar * Vcot
-	var final = Vfinal.toFixed(2) 
-	document.getElementById('result').innerHTML='O valor convertido para Moeda Real: R$ '+final
+	//var final = Vfinal.toFixed(2) 
+	document.getElementById('result').innerHTML='O valor convertido para Moeda Real: '+ Vfinal.toLocaleString("pt-BR", {style: 'currency', currency: 'BRL' });
+
+	console.log(Vdolar+-+Vcot)
 
 }
 
@@ -83,4 +89,13 @@ function displayStuff(text) {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
   });
+
+  function removePontoVirgula(valor){
+  	 while(valor.indexOf(".") != -1){
+        valor = valor.replace(".","")
+    }
+    valor = valor.replace(",",".")
+   
+    return valor
+  }
 
