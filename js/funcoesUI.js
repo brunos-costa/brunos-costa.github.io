@@ -1,18 +1,21 @@
- function conversor(){
-      var Vdolar = 0;     
-      var Vcot = 0; 
-        //acessar o que foi digitado
-        var Vdolar = document.getElementById('dolares').value;
-        var Vcot = document.getElementById('cot').value;
-        
-        //converter de string para float
-        Vdolar = parseFloat(Vdolar);
-        Vcot = parseFloat(Vcot);
-        var Vfinal
-        Vfinal = Vdolar * Vcot
-        var final = Vfinal.toFixed(2) 
-        document.getElementById('result').innerHTML='O valor convertido para Moeda Real: R$ '+final
-      }
+ function conversor(event){
+	event.preventDefault()
+
+	var Vdolar = 0;     
+	var Vcot = 0; 
+	//acessar o que foi digitado
+	var Vdolar = document.getElementById('dolares').value;
+	var Vcot = document.getElementById('cot').value;
+
+	//converter de string para float
+	Vdolar = parseFloat(Vdolar);
+	Vcot = parseFloat(Vcot);
+	var Vfinal
+	Vfinal = Vdolar * Vcot
+	var final = Vfinal.toFixed(2) 
+	document.getElementById('result').innerHTML='O valor convertido para Moeda Real: R$ '+final
+
+}
 
 function displayStuff(text) {
  let msgInicial = document.getElementById("msgInicial")
@@ -40,7 +43,7 @@ function displayStuff(text) {
   if(text === "cambio")
   {
     document.getElementById("cambio").style.display = "block";
-    conversor()
+    conversor(event)
     msgInicial.innerHTML = "Cálculo do valor em reais a partir de um valor em dólar e cotação inserida pelo usuário"
 
   }
