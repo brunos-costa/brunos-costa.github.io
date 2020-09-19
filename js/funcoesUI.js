@@ -8,18 +8,26 @@
 	var Vdolar = document.getElementById('dolares').value;
 	var Vcot = document.getElementById('cot').value;	
 
+	// aplicando máscara com a biblioteca 'vanilla-masker'
+	VMasker(document.querySelectorAll(".money-input")).maskMoney({
+  
+	  separator: ',',
+	  delimiter: '.'
+
+	});
+
     Vdolar = removePontoVirgula(Vdolar)
     Vcot = removePontoVirgula(Vcot)
 
 	//converter de string para float
 	Vdolar = parseFloat(Vdolar);
 	Vcot = parseFloat(Vcot);
-	var Vfinal
-	Vfinal = Vdolar * Vcot
-	//var final = Vfinal.toFixed(2) 
+
+	var Vfinal = (isNaN(Vdolar) || isNaN(Vcot)) ? 0 : Vdolar * Vcot// Testa se os valores são do tipo NaN
+
+	 
 	document.getElementById('result').innerHTML='O valor convertido para Moeda Real: '+ Vfinal.toLocaleString("pt-BR", {style: 'currency', currency: 'BRL' });
 
-	console.log(Vdolar+-+Vcot)
 
 }
 

@@ -61,17 +61,19 @@
                             <div class="row">
                                 <div class="input-field col s12 m6 ">
                                     <i class="material-icons prefix">attach_money</i>
-                                    <input id="dolares" type="text" class="validate">
+                                    <input id="dolares" type="text" class="validate money-input" data-js-input>
                                     <label for="dolares">Valor em Dolar:</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <i class="material-icons prefix">attach_money</i>
-                                    <input id="cot" type="text" class="validate">
+                                    <input id="cot" type="text" class="validate money-input">
                                     <label for="cot">Valor cotação do dia:</label>
                                 </div>
                             </div>
 
                             <p id='result'></p>
+                            <p id='result2'></p>
+                            <p id='result3'></p>
 
                             <div class="row">
                                 <button type="submit" name="converter" id="cambio" class="waves-effect waves-light btn right" onclick="conversor(event)">Converter</button>
@@ -171,9 +173,7 @@
 
 
     <!-- javascript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
-    <script src="js/mascaras.js"></script> 
+    <script src="https://unpkg.com/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
     <script src="js/funcoesUI.js"></script>
