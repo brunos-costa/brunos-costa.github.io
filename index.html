@@ -84,6 +84,46 @@
             <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
         </section>
 
+        <!-- 3ª funcionalidade: Verificar dia da semana -->
+        <section class="row" id="dia" style="display:none">
+            <section class="col l2"></section> <!-- pegando 2 colunas do lado esquerdo -->
+            <section class="col l8 s12">
+                <!-- pegando 8 colunas dando a impresseão de centralização -->
+                <div class="card-panel">
+
+                    <div class="row">
+                        <form class="col s12" id="form-day">
+                            <div class="row">
+                                <div class="input-field col s12 m4 ">
+                                    <i class="material-icons prefix">date_range</i>
+                                    <input id="day" type="number" class="validate" min="1" max="31">
+                                    <label for="day">Dia</label>
+                                </div>
+                                <div class="input-field col s12 m4">
+                                    <i class="material-icons prefix">date_range</i>
+                                    <input id="month" type="number" class="validate" min="1" max="12">
+                                    <label for="month">Mês</label>
+                                </div>
+                                <div class="input-field col s12 m4">
+                                    <i class="material-icons prefix">date_range</i>
+                                    <input id="year" type="number" class="validate" min="1500" max="3000">
+                                    <label for="year">Ano</label>
+                                </div>
+                            </div>
+
+                            <p id="showText"></p>
+
+                            <div class="row">
+                                <button type="submit" name="action" class="waves-effect waves-light btn right">Verificar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+            <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
+        </section>
+
         <!-- 4ª funcionalidade: Desconto Porcentagem -->
         <section class="row" id="desconto" style="display:none">
             <section class="col l2"></section> <!-- pegando 2 colunas do lado esquerdo -->
@@ -131,11 +171,6 @@
                                 <div class="container" id="idade" style="display:none">
                                         Calcular Idade
                                         <!-- Page Content goes here -->
-                                </div>
-
-                                <div class="container" id="dia" style="display:none">
-                                    Verificar Dia da Semana
-                                    <!-- Page Content goes here -->
                                 </div>
 
                             </div>
