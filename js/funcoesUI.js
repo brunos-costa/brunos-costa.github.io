@@ -173,7 +173,7 @@ function checkDayofWeek()
             break;
           }
       }
-      document.getElementById("showText").innerHTML = "Esse dia é "+ showDay;
+      document.getElementById("showText").innerHTML = "A data "+day+"/"+month+"/"+year+" é "+ showDay;
       //document.getElementById("showText").classList.add("card-panel");
       //document.getElementById("showText").classList.add("teal");
     }
