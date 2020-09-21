@@ -56,7 +56,7 @@
                 <div class="card-panel">
 
                     <div class="row">
-                        <p>home</p>
+                        <h5 class="center-align">Para começar, escolha uma das funções do menu.</h5>
                     </div>                         
 
                 </div>
@@ -101,7 +101,7 @@
                 <div class="card-panel">
 
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" onsubmit="conversor(event)">
                             <div class="row">
                                 <div class="input-field col s12 m6 ">
                                     <i class="material-icons prefix">attach_money</i>
@@ -118,7 +118,7 @@
                             <p id='result'></p>
 
                             <div class="row">
-                                <button type="submit" name="converter" id="cambio" class="waves-effect waves-light btn right" onclick="conversor(event)">Converter</button>
+                                <button type="submit" name="converter" id="cambio" class="waves-effect waves-light btn right">Converter</button>
                             </div> 
                         </form>
                     </div>                         
@@ -179,16 +179,16 @@
                 <div class="card-panel">
 
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" onsubmit="calcdesc(event)">
                             <div class="row">
                                 <div class="input-field col s12 m6 ">
                                     <i class="material-icons prefix">attach_money</i>
-                                    <input id="preco" type="text" class="validate money-input">
+                                    <input id="preco" type="text" class="validate money-input" required>
                                     <label for="preco">Preço para calcular desconto:</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <i class="material-icons prefix"> % </i>
-                                    <input id="porcentagem" type="text" class="validate money-input">
+                                    <input id="porcentagem" type="text" class="validate money-input" required>
                                     <label for="porcentagem">Valor do desconto em %:</label>
                                 </div>
                             </div>
@@ -196,7 +196,7 @@
                             <p id='resultporcentagem'></p>
 
                             <div class="row">
-                                <button type="submit" name="desconto" id="desconto" class="waves-effect waves-light btn right" onclick="calcdesc(event)">Calcular Desconto</button>
+                                <button type="submit" name="desconto" id="desconto" class="waves-effect waves-light btn right">Calcular Desconto</button>
                             </div>
                         </form>
                     </div>

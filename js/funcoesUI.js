@@ -1,3 +1,13 @@
+window.onload = function(){
+// aplicando máscara com a biblioteca 'vanilla-masker'
+  VMasker(document.querySelectorAll(".money-input")).maskMoney({
+    
+    separator: ',',
+    delimiter: '.'
+
+    })
+
+}
 // Funcionalidade 1
 function calc_idade(event) {
   event.preventDefault()
@@ -25,18 +35,11 @@ function conversor(event){
 
 	//acessar o que foi digitado
 	var Vdolar = document.getElementById('dolares').value;
-	var Vcot = document.getElementById('cot').value;	
-
-	// aplicando máscara com a biblioteca 'vanilla-masker'
-	VMasker(document.querySelectorAll(".money-input")).maskMoney({
+  var Vcot = document.getElementById('cot').value;	
   
-	  separator: ',',
-	  delimiter: '.'
-
-	});
-
-    Vdolar = removePontoVirgula(Vdolar)
-    Vcot = removePontoVirgula(Vcot)
+  
+  Vdolar = removePontoVirgula(Vdolar)
+  Vcot = removePontoVirgula(Vcot)
 
 	//converter de string para float
 	Vdolar = parseFloat(Vdolar);
@@ -194,14 +197,6 @@ function calcdesc(event) {
 	var VPreco = document.getElementById('preco').value;
 	var VPorcentagem = document.getElementById('porcentagem').value;
 
-	// aplicando máscara com a biblioteca 'vanilla-masker'
-	VMasker(document.querySelectorAll(".money-input")).maskMoney({
-
-		separator: ',',
-		delimiter: '.'
-
-	});
-
 	VPreco = removePontoVirgula(VPreco)
 	VPorcentagem = removePontoVirgula(VPorcentagem)
 
@@ -216,6 +211,8 @@ function calcdesc(event) {
 
 
 }
+
+// Exibindo os menus
 function displayStuff(text) {
  let msgInicial = document.getElementById("msgInicial")
 
@@ -242,7 +239,7 @@ function displayStuff(text) {
   if(text === "cambio")
   {
     document.getElementById("cambio").style.display = "block";
-    conversor(event)
+    //conversor(event)
     msgInicial.innerHTML = "Cálculo do valor em reais a partir de um valor em dólar e cotação inserida pelo usuário"
 
   }
@@ -262,7 +259,7 @@ function displayStuff(text) {
   if(text === "desconto")
   {
     document.getElementById("desconto").style.display = "block";
-    calcdesc(event)
+    //calcdesc(event)
     msgInicial.innerHTML = "Calcular  o  resultado  a  partir  de  um  valor  base  e  o percentual de desconto indicados pelo usuário"
   }
   else {
