@@ -2,13 +2,13 @@
 function calc_idade(event) {
   event.preventDefault()
 
-  var nasc_ano = document.form1.nasc_ano.value;
+  var nasc_ano = document.getElementById("nasc").value//document.form1.nasc_ano.value;
 
-   
+  
 	var data = new Date();
 	var atual_ano = data.getFullYear();
 	
-  Idade = atual_ano - nasc_ano;
+  var Idade = atual_ano - nasc_ano;
   
   document.getElementById('mostraIdade').innerHTML='Você tem '+Idade+" anos"
 	

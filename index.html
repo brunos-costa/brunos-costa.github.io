@@ -71,19 +71,20 @@
                 <div class="card-panel">
 
                     <div class="row">
-                        <form class="col s12" method="post" name="form1">
+                        <form class="col s12" onsubmit="calc_idade(event)">
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">today</i>
-                                    <input id="nasc" name="nasc_ano" type="number" class="validate" min="1500" max="3000" required>
+                                    <input id="nasc" type="number" class="validate" name="nasc_ano" min="1500" max="3000" required>
                                     <label for="nasc">Digite o ano do seu nascimento: </label>
+                                    <span class="helper-text" data-error="Informe um ano entre 1500 e 3000" data-success="Muito bem"></span>
                                 </div>
                             </div>
 
                             <p id='mostraIdade'></p>
 
                             <div class="row">
-                                <button type="submit" onclick="calc_idade(event);" class="waves-effect waves-light btn right">Calcular Idade</button>
+                                <button type="submit" class="waves-effect waves-light btn right">Calcular Idade</button>
                             </div> 
                         </form>
                     </div>                         
