@@ -31,6 +31,38 @@
 
 }
 
+function calcdesc(event) {
+	event.preventDefault()
+
+	var VPreco = 0;
+	var VPorcentagem = 0;
+
+	//acessar o que foi digitado
+	var VPreco = document.getElementById('preco').value;
+	var VPorcentagem = document.getElementById('porcentagem').value;
+
+	// aplicando máscara com a biblioteca 'vanilla-masker'
+	VMasker(document.querySelectorAll(".money-input")).maskMoney({
+
+		separator: ',',
+		delimiter: '.'
+
+	});
+
+	VPreco = removePontoVirgula(VPreco)
+	VPorcentagem = removePontoVirgula(VPorcentagem)
+
+	//converter de string para float
+	VPreco = parseFloat(VPreco);
+	VPorcentagem = parseFloat(VPorcentagem);
+
+	var Vfinal = (isNaN(VPreco) || isNaN(VPorcentagem)) ? 0 : VPreco * (VPorcentagem/100) // Testa se os valores são do tipo NaN
+
+
+	document.getElementById('resultporcentagem').innerHTML = 'O valor do desconto é: ' + Vfinal.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' });
+
+
+}
 function displayStuff(text) {
  let msgInicial = document.getElementById("msgInicial")
 
@@ -77,6 +109,7 @@ function displayStuff(text) {
   if(text === "desconto")
   {
     document.getElementById("desconto").style.display = "block";
+    calcdesc(event)
     msgInicial.innerHTML = "Calcular  o  resultado  a  partir  de  um  valor  base  e  o percentual de desconto indicados pelo usuário"
   }
   else {
