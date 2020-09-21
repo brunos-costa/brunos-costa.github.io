@@ -1,3 +1,21 @@
+// Funcionalidade 1
+function calc_idade(event) {
+  event.preventDefault()
+
+  var nasc_ano = document.form1.nasc_ano.value;
+
+   
+	var data = new Date();
+	var atual_ano = data.getFullYear();
+	
+  Idade = atual_ano - nasc_ano;
+  
+  document.getElementById('mostraIdade').innerHTML='Você tem '+Idade+" anos"
+	
+	//alert ('Você tem '+ Idade + ' anos.');
+
+}
+
 // Funcionalidade 2
 function conversor(event){
 	event.preventDefault()
@@ -198,10 +216,6 @@ function calcdesc(event) {
 
 
 }
-
-
-
-
 function displayStuff(text) {
  let msgInicial = document.getElementById("msgInicial")
 

@@ -49,6 +49,49 @@
             <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
         </section>
 
+        <!-- Home-->
+        <section class="row" id="home" style="display:block">
+            <section class="col l2"></section> <!-- pegando 2 colunas do lado esquerdo -->
+            <section class="col l8 s12"> <!-- pegando 8 colunas dando a impresseão de centralização -->
+                <div class="card-panel">
+
+                    <div class="row">
+                        <p>home</p>
+                    </div>                         
+
+                </div>
+            </section>
+            <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
+        </section>
+
+        <!-- 1ª funcionalidade: Idade -->
+        <section class="row" id="idade" style="display:none">
+            <section class="col l2"></section> <!-- pegando 2 colunas do lado esquerdo -->
+            <section class="col l8 s12"> <!-- pegando 8 colunas dando a impresseão de centralização -->
+                <div class="card-panel">
+
+                    <div class="row">
+                        <form class="col s12" method="post" name="form1">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">today</i>
+                                    <input id="nasc" name="nasc_ano" type="number" class="validate" min="1500" max="3000" required>
+                                    <label for="nasc">Digite o ano do seu nascimento: </label>
+                                </div>
+                            </div>
+
+                            <p id='mostraIdade'></p>
+
+                            <div class="row">
+                                <button type="submit" onclick="calc_idade(event);" class="waves-effect waves-light btn right">Calcular Idade</button>
+                            </div> 
+                        </form>
+                    </div>                         
+
+                </div>
+            </section>
+            <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
+        </section>
 
         <!-- 2ª funcionalidade: Câmbio -->
         <section class="row" id="cambio" style="display:none">
@@ -61,12 +104,12 @@
                             <div class="row">
                                 <div class="input-field col s12 m6 ">
                                     <i class="material-icons prefix">attach_money</i>
-                                    <input id="dolares" type="text" class="validate money-input" data-js-input>
+                                    <input id="dolares" type="text" class="validate money-input" required>
                                     <label for="dolares">Valor em Dolar:</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <i class="material-icons prefix">attach_money</i>
-                                    <input id="cot" type="text" class="validate money-input">
+                                    <input id="cot" type="text" class="validate money-input" required>
                                     <label for="cot">Valor cotação do dia:</label>
                                 </div>
                             </div>
@@ -96,18 +139,21 @@
                             <div class="row">
                                 <div class="input-field col s12 m4 ">
                                     <i class="material-icons prefix">date_range</i>
-                                    <input id="day" type="number" class="validate" min="1" max="31">
+                                    <input id="day" type="number" class="validate" min="1" max="31" required>
                                     <label for="day">Dia</label>
+                                    <span class="helper-text" data-error="Informe um dia entre 1 e 31" data-success="Muito bem"></span>
                                 </div>
                                 <div class="input-field col s12 m4">
                                     <i class="material-icons prefix">date_range</i>
-                                    <input id="month" type="number" class="validate" min="1" max="12">
+                                    <input id="month" type="number" class="validate" min="1" max="12" required>
                                     <label for="month">Mês</label>
+                                    <span class="helper-text" data-error="Informe um mês entre 1 e 12" data-success="Muito bem"></span>
                                 </div>
                                 <div class="input-field col s12 m4">
                                     <i class="material-icons prefix">date_range</i>
-                                    <input id="year" type="number" class="validate" min="1500" max="3000">
+                                    <input id="year" type="number" class="validate" min="1500" max="3000" required>
                                     <label for="year">Ano</label>
+                                    <span class="helper-text" data-error="Informe um ano entre 1500 e 3000" data-success="Muito bem"></span>
                                 </div>
                             </div>
 
@@ -136,7 +182,7 @@
                             <div class="row">
                                 <div class="input-field col s12 m6 ">
                                     <i class="material-icons prefix">attach_money</i>
-                                    <input id="preco" type="text" class="validate money-input" data-js-input>
+                                    <input id="preco" type="text" class="validate money-input">
                                     <label for="preco">Preço para calcular desconto:</label>
                                 </div>
                                 <div class="input-field col s12 m6">
@@ -158,28 +204,6 @@
             </section>
             <section class="col l2"></section><!-- pegando 2 colunas do lado direito -->
         </section>
-
-
-        <section class="row">
-            <section class="col l2"></section>
-                    <section class="col l8 s12">
-                            <div class="card-panel light-blue lighten-5 center-align">
-                                <div class="container" id="home" style="display:block">
-                                        Home
-                                        <!-- Page Content goes here -->
-                                </div>
-                                <div class="container" id="idade" style="display:none">
-                                        Calcular Idade
-                                        <!-- Page Content goes here -->
-                                </div>
-
-                            </div>
-                            
-                    </section>                
-            
-        </section>
-
-
 
         <!-- Modal Desenvolvedores -->
         <section id="modalDev" class="modal modal-fixed-footer">
