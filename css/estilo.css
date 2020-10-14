@@ -8,14 +8,23 @@
 .page-footer{position: fixed; bottom:0; width:100%}
 
 /*  CRIANDO CARROSSEL COM O NOME*/
-.carrossel{width:100%; display:flex; justify-content: flex-end;}
-.carrossel > span{position: relative; animation: movimento 10s infinite;}
+.carrossel{width:100%; display:flex; justify-content: flex-start;}
+.carrossel > span{position: relative; animation: movimento-left 10s infinite;}
 
-@keyframes movimento{
+@keyframes movimento-right{
     0%{right:0%; opacity:0;}
     20%{opacity:5;}
     30%{opacity:1;}
     60%{opacity:5;}    
     80%{opacity:0;}    
     100%{right:100%; opacity: 0;}
+}
+
+@keyframes movimento-left{
+    0%{left:0%; opacity:0;}
+    20%{opacity:5;}
+    30%{opacity:1;}
+    60%{opacity:5;}    
+    80%{opacity:0;}    
+    100%{left:100%; opacity: 0;}
 }
